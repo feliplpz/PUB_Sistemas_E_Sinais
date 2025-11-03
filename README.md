@@ -14,7 +14,7 @@ Clique nos links abaixo para abrir direto no Google Colab:
 
 | # | Tópico | Colab |
 |---|--------|-------|
-| 01 | Modelo Predador-Presa | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/feliplpz/PUB_Sistemas_E_Sinais/blob/main/notebooks/01_predador_presa.ipynb) |
+| 01 | Modelo Predador-Presa | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/feliplpz/PUB_Sistemas_E_Sinais/blob/main/notebooks/predador_presa.ipynb) |
 
 ---
 
