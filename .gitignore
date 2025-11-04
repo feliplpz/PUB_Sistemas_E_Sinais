@@ -1,56 +1,74 @@
-venv/
-env/
-ENV/
-
-.idea/
-*.swp
-*.swo
-*~
-
-.ipynb_checkpoints/
-*.ipynb_checkpoints
-
+# === Python ===
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
+
+# === Virtual Environments ===
+venv/
+.venv/
+env/
+ENV/
+
+# === IDEs ===
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.sublime-project
+.sublime-workspace
+
+# === Jupyter ===
+.ipynb_checkpoints/
+*.ipynb  # Versionamos apenas .py via jupytext
+
+# === Testing & Coverage ===
+.pytest_cache/
+htmlcov/
+.coverage
+*.cover
+
+# === Linting/Type Checking ===
+.ruff_cache/
+.mypy_cache/
+
+# === Build & Distribution ===
 build/
-develop-eggs/
 dist/
-downloads/
-eggs/
+*.egg-info/
 .eggs/
+.installed.cfg
+*.egg
+develop-eggs/
 lib/
 lib64/
 parts/
 sdist/
 var/
 wheels/
-*.egg-info/
-.installed.cfg
-*.egg
+downloads/
 
+# === Documentation ===
+docs/_build/
+
+# === Data Files ===
 *.csv
 *.xlsx
 *.xls
 *.dat
-data/
 *.pkl
 *.pickle
+data/
 
+# === Images & Output ===
 *.png
 *.jpg
 *.jpeg
 output/
 results/
 
+# === OS Specific ===
 .DS_Store
-Thumbs.db
-
-.vscode/
-.sublime-project
-.sublime-workspace
-
-.ruff_cache/
-.mypy_cache/
+Thumbs.dbnotebooks/*.ipynb

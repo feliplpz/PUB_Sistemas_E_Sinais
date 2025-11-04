@@ -1,24 +1,21 @@
 """
 Módulo com implementação do modelo Predador-Presa de Lotka-Volterra.
+
+Este módulo fornece funções para simular e analisar o sistema de equações
+diferenciais do modelo Lotka-Volterra.
 """
 
-from typing import Tuple, List
 import numpy as np
-from scipy.integrate import solve_ivp
 from numpy.typing import NDArray
+from scipy.integrate import solve_ivp
 
 
 def lotka_volterra(
-    t: float,
-    y: List[float],
-    alpha: float,
-    beta: float,
-    gamma: float,
-    delta: float
-) -> List[float]:
+    t: float, y: list[float], alpha: float, beta: float, gamma: float, delta: float
+) -> list[float]:
     """
     Sistema de equações diferenciais do modelo Lotka-Volterra.
-    
+
     Parameters
     ----------
     t : float
@@ -34,7 +31,7 @@ def lotka_volterra(
         Taxa de mortalidade dos predadores
     delta : float
         Eficiência de conversão
-        
+
     Returns
     -------
     List[float]
@@ -54,11 +51,11 @@ def resolver_sistema(
     x1_0: float,
     x2_0: float,
     t_max: float = 50.0,
-    n_points: int = 1000
-) -> Tuple[NDArray[np.float64], NDArray[np.float64], NDArray[np.float64]]:
+    n_points: int = 1000,
+) -> tuple[NDArray[np.float64], NDArray[np.float64], NDArray[np.float64]]:
     """
     Resolve o sistema de EDOs numericamente usando o método de Runge-Kutta.
-    
+
     Parameters
     ----------
     alpha : float
@@ -77,7 +74,7 @@ def resolver_sistema(
         Tempo final de simulação (padrão: 50.0)
     n_points : int, optional
         Número de pontos para avaliação (padrão: 1000)
-        
+
     Returns
     -------
     Tuple[NDArray, NDArray, NDArray]
@@ -87,29 +84,26 @@ def resolver_sistema(
     y0 = [x1_0, x2_0]
     t_span = (0.0, t_max)
     t_eval = np.linspace(0.0, t_max, n_points)
-    
+
     sol = solve_ivp(
         lotka_volterra,
         t_span,
         y0,
         args=(alpha, beta, gamma, delta),
         t_eval=t_eval,
-        method='RK45',
-        dense_output=True
+        method="RK45",
+        dense_output=True,
     )
-    
+
     return sol.t, sol.y[0], sol.y[1]
 
 
 def calcular_equilibrio(
-    alpha: float,
-    beta: float,
-    gamma: float,
-    delta: float
-) -> Tuple[float, float]:
+    alpha: float, beta: float, gamma: float, delta: float
+) -> tuple[float, float]:
     """
     Calcula o ponto de equilíbrio não-trivial do sistema.
-    
+
     Parameters
     ----------
     alpha : float
@@ -120,7 +114,7 @@ def calcular_equilibrio(
         Taxa de mortalidade dos predadores
     delta : float
         Eficiência de conversão
-        
+
     Returns
     -------
     Tuple[float, float]

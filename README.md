@@ -56,8 +56,8 @@ git push
 
 ## 📧 Contato
 
-**Felipe Lopez**  
-felipe_lopez@usp.br  
+**Felipe Lopez**
+felipe_lopez@usp.br
 Universidade de São Paulo (USP)
 
 ## 📄 Licença

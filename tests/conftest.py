@@ -1,9 +1,6 @@
-"""
-Configurações globais para pytest.
-"""
+import warnings
 
 import pytest
-import warnings
 
 
 @pytest.fixture(autouse=True)
