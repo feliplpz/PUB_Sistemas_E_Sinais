@@ -49,3 +49,11 @@ clean:
 	rm -rf docs/_build/
 	find . -type d -name __pycache__ -exec rm -rf {} +
 	find . -type f -name "*.pyc" -delete
+
+kernel:
+	@echo "Configurando kernel Jupyter..."
+	python -m ipykernel install --user --name=sistemas-sinais --display-name="Python (Sistemas e Sinais)"
+	@echo "Adicionando kernel aos notebooks..."
+	python scripts/set_kernel.py || true
+	jupytext --sync notebooks/*.ipynb
+	@echo "✅ Kernel configurado!"
