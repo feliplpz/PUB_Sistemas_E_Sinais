@@ -28,7 +28,6 @@
 from typing import Tuple, List
 import numpy as np
 import matplotlib.pyplot as plt
-from rich.jupyter import display
 from scipy.integrate import solve_ivp
 from numpy.typing import NDArray
 
@@ -599,11 +598,11 @@ ax2.grid(True, alpha=0.3)
 plt.tight_layout()
 plt.show()
 
-display(f"\nResultados da Simulação Customizada:")
-display(f"   Ponto de Equilíbrio: x₁ = {x1_eq_custom:.3f}, x₂ = {x2_eq_custom:.3f}")
-display(f"   População máxima de presas: {np.max(x1_custom):.3f}")
-display(f"   População máxima de predadores: {np.max(x2_custom):.3f}")
-display(f"   População mínima de presas: {np.min(x1_custom):.3f}")
-display(f"   População mínima de predadores: {np.min(x2_custom):.3f}")
+print(f"\nResultados da Simulação Customizada:")
+print(f"   Ponto de Equilíbrio: x₁ = {x1_eq_custom:.3f}, x₂ = {x2_eq_custom:.3f}")
+print(f"   População máxima de presas: {np.max(x1_custom):.3f}")
+print(f"   População máxima de predadores: {np.max(x2_custom):.3f}")
+print(f"   População mínima de presas: {np.min(x1_custom):.3f}")
+print(f"   População mínima de predadores: {np.min(x2_custom):.3f}")
 
 # %%
