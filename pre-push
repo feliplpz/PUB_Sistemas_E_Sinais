@@ -1,0 +1,20 @@
+#!/bin/bash
+# Copia este arquivo para: .git/hooks/pre-push
+# chmod +x .git/hooks/pre-push
+
+echo "Rodando testes antes do push..."
+
+# Rodar testes
+pytest tests/ -v --cov=src --cov-fail-under=80
+
+# Verificar resultado
+if [ $? -ne 0 ]; then
+    echo ""
+    echo "❌ TESTES FALHARAM! Push bloqueado."
+    echo "   Corrija os erros e tente novamente."
+    exit 1
+fi
+
+echo ""
+echo "Testes OK! Push liberado."
+exit 0

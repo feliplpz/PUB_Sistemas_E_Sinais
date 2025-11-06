@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🔄 Sincronizando notebooks..."
+echo "Sincronizando notebooks..."
 
 for notebook in notebooks/*.py; do
     if [ -f "$notebook" ]; then
@@ -9,4 +9,4 @@ for notebook in notebooks/*.py; do
     fi
 done
 
-echo "✅ Sincronização completa!"
+echo " Sincronização completa"

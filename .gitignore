@@ -71,4 +71,5 @@ results/
 
 # === OS Specific ===
 .DS_Store
-Thumbs.dbnotebooks/*.ipynb
+Thumbs.db
+notebooks/*.ipynb

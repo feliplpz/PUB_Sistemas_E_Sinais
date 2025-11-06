@@ -39,7 +39,7 @@ docs = [
 Repository = "https://github.com/feliplpz/PUB_Sistemas_E_Sinais"
 
 [tool.setuptools]
-py-modules = ["lotka_volterra"]  # Para arquivo .py único
+packages = ["simulations"]
 package-dir = {"" = "src"}
 
 # Black configuration

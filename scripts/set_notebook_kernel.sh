@@ -1,19 +1,15 @@
 #!/bin/bash
-# Adiciona o kernel aos notebooks
 
 KERNEL_NAME="sistemas-sinais"
 KERNEL_DISPLAY="Python (Sistemas e Sinais)"
 
-echo "🔧 Configurando kernel nos notebooks..."
+echo "Configurando kernel nos notebooks..."
 
 for notebook_py in notebooks/*.py; do
     if [ -f "$notebook_py" ]; then
         echo "  ✓ $(basename $notebook_py)"
 
-        # Adicionar metadados do kernel no início do arquivo
-        # (se ainda não existir)
         if ! grep -q "kernelspec:" "$notebook_py"; then
-            # Criar arquivo temporário com os metadados
             cat > /tmp/kernel_header.txt << HEADER
 # ---
 # jupyter:
@@ -29,9 +25,8 @@ HEADER
             rm /tmp/kernel_header.txt
         fi
 
-        # Sincronizar para .ipynb
         jupytext --sync "$notebook_py"
     fi
 done
 
-echo "✅ Kernels configurados!"
+echo "Kernels configurados!"
